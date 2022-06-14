@@ -1,4 +1,4 @@
-{% set version = '1.1' %}
+{% set version = "1.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/BASIX_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/BASIX/BASIX_{{ version }}.tar.gz
-  sha256: 2d06b08d5880650707dbd50423ea5d8baa8b1f6b3177432fb56e6a1ec3deb3a1
+  sha256: 5b1b500625d6c776124518bba7f47091ed59dd5d86c9fd220cf515610dcfb951
 
 build:
-  merge_build_host: True  # [win]
-  number: 1002
+  merge_build_host: true  # [win]
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -48,7 +48,7 @@ about:
   license: GPL-2
   summary: 'BASIX provides some efficient C/C++ implementations to speed up calculations in R. '
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
